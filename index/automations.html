@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered automation solutions for businesses">
+    <title>AI Automations - Shree AI</title>
+    
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 50px;">
+                <span style="background: linear-gradient(135deg, #FFD700, #FFA500); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; font-weight: 700;">BETA</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="developers.html" class="nav-link">Developers</a></li>
+                <li><a href="demo.html" class="nav-link">AI Demos</a></li>
+                <li><a href="automations.html" class="nav-link active">Automations</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <h1>AI-Powered Automations</h1>
+                <p>Complete business automation solutions - Click any card to explore</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-demos">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                
+                <div class="demo-card" data-aos="fade-up">
+                    <div style="background: linear-gradient(135deg, #0048FF, #0038CC); padding: 3rem 2rem; border-radius: var(--radius-lg) var(--radius-lg) 0 0; text-align: center;">
+                        <i class="fas fa-building" style="font-size: 4rem; color: white; margin-bottom: 1rem;"></i>
+                        <h3 style="color: white; margin: 0;">Real Estate Automation</h3>
+                    </div>
+                    <div style="padding: 2rem; background: var(--bg-secondary); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">AI-powered property analysis, valuation, and lead management system</p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem;">
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #0048FF; margin-right: 0.5rem;"></i> Property valuation</li>
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #0048FF; margin-right: 0.5rem;"></i> Investment analysis</li>
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #0048FF; margin-right: 0.5rem;"></i> ROI predictions</li>
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #0048FF; margin-right: 0.5rem;"></i> Market insights</li>
+                        </ul>
+                        <a href="auto-realestate.html" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-arrow-right"></i> Try Automation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="demo-card" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: linear-gradient(135deg, #10B981, #059669); padding: 3rem 2rem; border-radius: var(--radius-lg) var(--radius-lg) 0 0; text-align: center;">
+                        <i class="fas fa-shopping-cart" style="font-size: 4rem; color: white; margin-bottom: 1rem;"></i>
+                        <h3 style="color: white; margin: 0;">Supermart Automation</h3>
+                    </div>
+                    <div style="padding: 2rem; background: var(--bg-secondary); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Complete automation for small supermarkets - inventory, POS, and customer management</p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem;">
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #10B981; margin-right: 0.5rem;"></i> Smart inventory</li>
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #10B981; margin-right: 0.5rem;"></i> POS system</li>
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #10B981; margin-right: 0.5rem;"></i> Customer analytics</li>
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #10B981; margin-right: 0.5rem;"></i> Dynamic pricing</li>
+                        </ul>
+                        <a href="auto-supermart.html" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-arrow-right"></i> Try Automation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="demo-card" data-aos="fade-up" data-aos-delay="200">
+                    <div style="background: linear-gradient(135deg, #8B5CF6, #7C3AED); padding: 3rem 2rem; border-radius: var(--radius-lg) var(--radius-lg) 0 0; text-align: center;">
+                        <i class="fas fa-industry" style="font-size: 4rem; color: white; margin-bottom: 1rem;"></i>
+                        <h3 style="color: white; margin: 0;">Manufacturing & Logistics</h3>
+                    </div>
+                    <div style="padding: 2rem; background: var(--bg-secondary); border-radius: 0 0 var(--radius-lg) var(--radius-lg);">
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Autonomous manufacturing with AI-powered production, supply chain, and smart logistics</p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem;">
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #8B5CF6; margin-right: 0.5rem;"></i> Production optimization</li>
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #8B5CF6; margin-right: 0.5rem;"></i> Supply chain AI</li>
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #8B5CF6; margin-right: 0.5rem;"></i> Quality control</li>
+                            <li style="padding: 0.5rem 0; color: var(--text-primary);"><i class="fas fa-check" style="color: #8B5CF6; margin-right: 0.5rem;"></i> Predictive maintenance</li>
+                        </ul>
+                        <a href="auto-manufacturing.html" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-arrow-right"></i> Try Automation
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-cta">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Ready to Automate Your Business?</h2>
+                <p>Get custom AI automation solutions tailored to your needs</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                    <a href="pricing.html" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-tag"></i> View Pricing
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 40px; margin-bottom: 1rem;">
+                    </div>
+                    <p class="footer-description">
+                        Building intelligent AI solutions that empower everyone. 
+                        Proudly built by young developers from Kutch.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">AI Chatbot Builder</a></li>
+                        <li><a href="products.html">Content Generator</a></li>
+                        <li><a href="products.html">Workflow Automation</a></li>
+                        <li><a href="demo.html">AI Demos</a></li>
+                        <li><a href="automations.html">Automations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="developers.html">API Documentation</a></li>
+                        <li><a href="developers.html">GitHub</a></li>
+                        <li><a href="developers.html">Discord Community</a></li>
+                        <li><a href="developers.html">SDKs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest AI innovations</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shree AI. Made with <i class="fas fa-heart"></i> in Kutch, Gujarat.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/ai-agent.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

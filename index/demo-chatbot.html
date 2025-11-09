@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot - Shree AI</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 50px;">
+                <span style="background: linear-gradient(135deg, #FFD700, #FFA500); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; font-weight: 700;">BETA</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="developers.html" class="nav-link">Developers</a></li>
+                <li><a href="demo.html" class="nav-link active">AI Demos</a></li>
+                <li><a href="automations.html" class="nav-link">Automations</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <div style="display: inline-block; padding: 0.5rem 1rem; background: rgba(0, 72, 255, 0.1); border-radius: var(--radius-full); margin-bottom: 1rem;">
+                    <a href="demo.html" style="color: var(--color-primary); text-decoration: none; font-weight: 600;">
+                        <i class="fas fa-arrow-left"></i> Back to AI Demos
+                    </a>
+                </div>
+                <h1><i class="fas fa-robot"></i> AI Chatbot</h1>
+                <p>Chat with our intelligent Shree AI assistant powered by Groq</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="demo-container" data-aos="fade-up">
+                <div class="demo-body">
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="chat-message bot-message">
+                                <i class="fas fa-robot"></i>
+                                <div class="message-content">
+                                    <p>Hello! 👋 I'm the Shree AI Assistant. We're a new AI startup from Kutch, building amazing AI tools! How can I help you today?</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input-area">
+                            <input type="text" id="chatInput" placeholder="Ask me about Shree AI..." onkeypress="handleAIChatKeyPress(event)">
+                            <button class="btn btn-primary" onclick="sendAIChatMessage()">
+                                <i class="fas fa-paper-plane"></i> Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shree AI. Made with <i class="fas fa-heart"></i> in Kutch, Gujarat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/ai-agent.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermart Automation - Shree AI</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 50px;">
+                <span style="background: linear-gradient(135deg, #FFD700, #FFA500); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; font-weight: 700;">BETA</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="developers.html" class="nav-link">Developers</a></li>
+                <li><a href="demo.html" class="nav-link">AI Demos</a></li>
+                <li><a href="automations.html" class="nav-link active">Automations</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <div style="display: inline-block; padding: 0.5rem 1rem; background: rgba(0, 72, 255, 0.1); border-radius: var(--radius-full); margin-bottom: 1rem;">
+                    <a href="automations.html" style="color: var(--color-primary); text-decoration: none; font-weight: 600;">
+                        <i class="fas fa-arrow-left"></i> Back to Automations
+                    </a>
+                </div>
+                <h1><i class="fas fa-shopping-cart"></i> Supermart Automation</h1>
+                <p>Complete AI-powered automation for small supermarkets</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="demo-container" data-aos="fade-up">
+                <div class="demo-body">
+                    <div class="demo-input-area">
+                        <label for="supermartInput">Store Details & Requirements:</label>
+                        <textarea id="supermartInput" rows="6" placeholder="E.g., Small supermart, 800 sq ft, 3 staff members, 500+ SKUs, daily footfall 150-200 customers...">Local supermart in Andheri, Mumbai. 800 sq ft space, 3 staff (1 manager, 2 cashiers), 500+ products, daily customers 150-200, current issues: manual inventory, stock-outs, long checkout queues, no customer loyalty program</textarea>
+                        
+                        <div style="margin: 1rem 0; padding: 1rem; background: var(--bg-secondary); border-radius: var(--radius-md);">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Select Automation Modules:</label>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem;">
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="module-inventory" checked style="width: 18px; height: 18px;">
+                                    <span>📦 Smart Inventory</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="module-pos" checked style="width: 18px; height: 18px;">
+                                    <span>💳 Smart POS</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="module-customer" checked style="width: 18px; height: 18px;">
+                                    <span>👥 Customer Analytics</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="module-staff" checked style="width: 18px; height: 18px;">
+                                    <span>👨‍💼 Staff Management</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="module-supplier" checked style="width: 18px; height: 18px;">
+                                    <span>🚚 Supplier Auto-Order</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="module-pricing" checked style="width: 18px; height: 18px;">
+                                    <span>💰 Dynamic Pricing</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-lg" onclick="generateSupermartAutomation()">
+                            <i class="fas fa-magic"></i> Generate Complete Automation System
+                        </button>
+                    </div>
+                    
+                    <div class="demo-output-area" id="supermartOutput" style="display: none;">
+                        <h4><i class="fas fa-robot"></i> AI-Generated Supermart Automation Plan:</h4>
+                        <div id="supermartAnalysis"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shree AI. Made with <i class="fas fa-heart"></i> in Kutch, Gujarat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/ai-agent.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

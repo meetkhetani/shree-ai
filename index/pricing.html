@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shree AI Pricing - Choose the perfect plan for your needs">
+    <title>Pricing - Shree AI</title>
+    
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 50px;">
+                <span style="background: linear-gradient(135deg, #FFD700, #FFA500); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; font-weight: 700;">BETA</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="developers.html" class="nav-link">Developers</a></li>
+                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <h1>Simple, Transparent Pricing</h1>
+                <p>Choose the perfect plan for your needs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Toggle -->
+    <section class="section section-pricing">
+        <div class="container">
+            <div class="pricing-toggle" data-aos="fade-up">
+                <span class="toggle-label">Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="billingToggle" onchange="toggleBilling()">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">Yearly <span class="save-badge">Save 20%</span></span>
+            </div>
+            
+            <!-- Pricing Cards -->
+            <div class="pricing-grid">
+                <!-- Free Plan -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-header">
+                        <h3>Free</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="0" data-yearly="0">0</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="pricing-description">Perfect for trying out Shree AI (Beta Access)</p>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 500 API calls/month</li>
+                        <li><i class="fas fa-check"></i> Basic AI models</li>
+                        <li><i class="fas fa-check"></i> Community support</li>
+                        <li><i class="fas fa-check"></i> 1 project</li>
+                        <li><i class="fas fa-check"></i> Beta access</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Custom training</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Priority support</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Advanced analytics</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary btn-lg btn-block">
+                        Join Beta (Free)
+                    </button>
+                </div>
+
+                <!-- Pro Plan (Featured) -->
+                <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="49" data-yearly="39">49</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="pricing-description">For professionals (Coming Soon)</p>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 100,000 API calls/month</li>
+                        <li><i class="fas fa-check"></i> Advanced AI models</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> 10 projects</li>
+                        <li><i class="fas fa-check"></i> Custom training</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check"></i> Team collaboration (5 users)</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                    </ul>
+                    
+                    <button class="btn btn-outline btn-lg btn-block" disabled>
+                        Coming Soon
+                    </button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="amount custom">Custom</span>
+                        </div>
+                        <p class="pricing-description">For large organizations (Coming 2025)</p>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited API calls</li>
+                        <li><i class="fas fa-check"></i> Custom AI models</li>
+                        <li><i class="fas fa-check"></i> Dedicated support</li>
+                        <li><i class="fas fa-check"></i> Unlimited projects</li>
+                        <li><i class="fas fa-check"></i> On-premise deployment</li>
+                        <li><i class="fas fa-check"></i> SLA guarantee</li>
+                        <li><i class="fas fa-check"></i> Unlimited team members</li>
+                        <li><i class="fas fa-check"></i> Custom integrations</li>
+                    </ul>
+                    
+                    <button class="btn btn-outline btn-lg btn-block" disabled>
+                        Coming 2025
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Comparison Table -->
+    <section class="section section-comparison">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Compare Plans</h2>
+                <p class="section-description">See what's included in each plan</p>
+            </div>
+            
+            <div class="comparison-table-wrapper" data-aos="fade-up">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Free</th>
+                            <th class="featured-col">Pro</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>API Calls</strong></td>
+                            <td>500/month</td>
+                            <td class="featured-col">100,000/month</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Projects</strong></td>
+                            <td>1</td>
+                            <td class="featured-col">10</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Team Members</strong></td>
+                            <td>1</td>
+                            <td class="featured-col">5</td>
+                            <td>Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Models</strong></td>
+                            <td>Basic</td>
+                            <td class="featured-col">Advanced</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Support</strong></td>
+                            <td>Community</td>
+                            <td class="featured-col">Priority</td>
+                            <td>Dedicated</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom Training</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="featured-col"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analytics</strong></td>
+                            <td>Basic</td>
+                            <td class="featured-col">Advanced</td>
+                            <td>Custom Dashboards</td>
+                        </tr>
+                        <tr>
+                            <td><strong>API Access</strong></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td class="featured-col"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Webhooks</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="featured-col"><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>White Labeling</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="featured-col"><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td><strong>SLA Guarantee</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="featured-col">99.5%</td>
+                            <td>99.9%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>On-Premise</strong></td>
+                            <td><i class="fas fa-times text-muted"></i></td>
+                            <td class="featured-col"><i class="fas fa-times text-muted"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-faq">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">Got questions? We've got answers</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What is beta access?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Beta access means you're joining us in the early stages! You'll get to try our products before the official launch, provide feedback, and potentially get special perks as an early supporter. All beta features are free during this period.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>When will paid plans be available?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We're planning to launch our Pro plan in early 2025. Beta users will receive exclusive early access and special discounts! Sign up now to be notified when we launch.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is the beta really free?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We're offering completely free beta access to help us improve our products. No credit card required. We value your feedback and want to build something amazing together!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for Enterprise customers.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can I cancel my subscription anytime?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! There are no long-term contracts. You can cancel your subscription at any time, and you'll retain access until the end of your current billing period.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you offer student or nonprofit discounts?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer special pricing for students, educators, and registered nonprofit organizations. Contact our support team with proof of status to get your discount code.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-cta">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Still Have Questions?</h2>
+                <p>Our team is here to help you choose the right plan</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-envelope"></i> Contact Sales
+                    </a>
+                    <a href="demo.html" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-play"></i> Try Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 40px; margin-bottom: 1rem;">
+                    </div>
+                    <p class="footer-description">
+                        Building intelligent AI solutions that empower everyone. 
+                        Proudly built by young developers from Kutch.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">AI Chatbot Builder</a></li>
+                        <li><a href="products.html">Content Generator</a></li>
+                        <li><a href="products.html">Workflow Automation</a></li>
+                        <li><a href="demo.html">Demo Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="developers.html">API Documentation</a></li>
+                        <li><a href="developers.html">GitHub</a></li>
+                        <li><a href="developers.html">Discord Community</a></li>
+                        <li><a href="developers.html">SDKs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest AI innovations</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shree AI. Made with <i class="fas fa-heart"></i> in Kutch, Gujarat.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/pricing.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

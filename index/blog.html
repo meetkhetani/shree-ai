@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shree AI Blog - AI News, Coding Tips, and Startup Insights">
+    <title>Blog - Shree AI</title>
+    
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 50px;">
+                <span style="background: linear-gradient(135deg, #FFD700, #FFA500); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; font-weight: 700;">BETA</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="developers.html" class="nav-link">Developers</a></li>
+                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <h1>Our Blog</h1>
+                <p>AI insights, coding tips, and startup stories from Kutch</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Filters -->
+    <section class="section section-blog-filters">
+        <div class="container">
+            <div class="blog-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All Posts</button>
+                <button class="filter-btn" data-filter="ai-news">AI News</button>
+                <button class="filter-btn" data-filter="coding-tips">Coding Tips</button>
+                <button class="filter-btn" data-filter="startup-life">Startup Life</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="section section-blog-posts">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+                <!-- Post 1 -->
+                <article class="blog-card" data-category="ai-news" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <i class="fas fa-brain"></i>
+                        <span class="blog-category">AI News</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Nov 8, 2025</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3>The Future of AI in 2025: What to Expect</h3>
+                        <p>
+                            Artificial Intelligence is evolving at an unprecedented pace. As a new startup in this space, 
+                            we're exploring the top trends that will shape the AI landscape in 2025.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="openBlogModal(1)">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-card" data-category="coding-tips" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <i class="fas fa-code"></i>
+                        <span class="blog-category">Coding Tips</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Nov 3, 2025</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                        <h3>10 JavaScript Tricks Every Developer Should Know</h3>
+                        <p>
+                            Level up your JavaScript skills with these powerful tricks and techniques. From array 
+                            methods to async/await patterns, boost your productivity and write cleaner code.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="openBlogModal(2)">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="blog-card" data-category="startup-life" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <i class="fas fa-rocket"></i>
+                        <span class="blog-category">Startup Life</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 30, 2025</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>Building Shree AI: Our Journey from Idea to Beta</h3>
+                        <p>
+                            A few months ago, Shree AI was just an idea. Today, we're in beta with our first users. 
+                            Learn how four 19-year-old developers from Kutch are building an AI startup.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="openBlogModal(3)">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="blog-card" data-category="ai-news" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <i class="fas fa-comments"></i>
+                        <span class="blog-category">AI News</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 28, 2025</span>
+                            <span><i class="fas fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h3>How Chatbots Are Transforming Customer Service</h3>
+                        <p>
+                            AI-powered chatbots are revolutionizing how businesses interact with customers. Explore 
+                            real-world examples and learn how to implement chatbots in your business.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="openBlogModal(4)">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="blog-card" data-category="coding-tips" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <i class="fas fa-python"></i>
+                        <span class="blog-category">Coding Tips</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 25, 2025</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                        <h3>Building Your First Machine Learning Model with Python</h3>
+                        <p>
+                            A beginner-friendly guide to creating your first ML model. We'll walk through data 
+                            preprocessing, model selection, training, and evaluation using scikit-learn.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="openBlogModal(5)">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="blog-card" data-category="startup-life" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <i class="fas fa-lightbulb"></i>
+                        <span class="blog-category">Startup Life</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 22, 2025</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                        <h3>5 Lessons We Learned in Our First Months</h3>
+                        <p>
+                            A few months ago, Shree AI was just an idea. Today, we're in beta. Here are the 
+                            most important lessons we learned along the way as a new startup.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="openBlogModal(6)">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Post 7 -->
+                <article class="blog-card" data-category="ai-news" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span class="blog-category">AI News</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 20, 2025</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                        <h3>AI Content Generation: Hype vs Reality</h3>
+                        <p>
+                            Can AI really replace human writers? We separate fact from fiction and explore the true 
+                            potential of AI-powered content generation tools.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="openBlogModal(7)">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Post 8 -->
+                <article class="blog-card" data-category="coding-tips" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <i class="fas fa-cogs"></i>
+                        <span class="blog-category">Coding Tips</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 18, 2025</span>
+                            <span><i class="fas fa-clock"></i> 9 min read</span>
+                        </div>
+                        <h3>Mastering API Design: Best Practices</h3>
+                        <p>
+                            Learn how to design clean, scalable, and developer-friendly APIs. From RESTful principles 
+                            to authentication strategies, we cover everything you need to know.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="openBlogModal(8)">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Post 9 -->
+                <article class="blog-card" data-category="startup-life" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <i class="fas fa-users"></i>
+                        <span class="blog-category">Startup Life</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> Oct 15, 2025</span>
+                            <span><i class="fas fa-clock"></i> 4 min read</span>
+                        </div>
+                        <h3>Why We Chose to Stay in Kutch</h3>
+                        <p>
+                            Everyone told us to move to Bangalore or Mumbai. Here's why we decided to build our 
+                            startup from our hometown, even as a new company starting out.
+                        </p>
+                        <button class="btn btn-outline btn-sm" onclick="openBlogModal(9)">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="section section-newsletter-cta">
+        <div class="container">
+            <div class="newsletter-cta-content" data-aos="zoom-in">
+                <i class="fas fa-envelope"></i>
+                <h2>Never Miss a Post</h2>
+                <p>Subscribe to our newsletter for the latest AI news, coding tips, and startup insights</p>
+                <form class="newsletter-form-large" id="blogNewsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paper-plane"></i> Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Modal -->
+    <div class="blog-modal" id="blogModal">
+        <div class="blog-modal-content">
+            <button class="blog-modal-close" onclick="closeBlogModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="blog-modal-body" id="blogModalBody">
+                <!-- Content will be inserted dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 40px; margin-bottom: 1rem;">
+                    </div>
+                    <p class="footer-description">
+                        Building intelligent AI solutions that empower everyone. 
+                        Proudly built by young developers from Kutch.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">AI Chatbot Builder</a></li>
+                        <li><a href="products.html">Content Generator</a></li>
+                        <li><a href="products.html">Workflow Automation</a></li>
+                        <li><a href="demo.html">Demo Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="developers.html">API Documentation</a></li>
+                        <li><a href="developers.html">GitHub</a></li>
+                        <li><a href="developers.html">Discord Community</a></li>
+                        <li><a href="developers.html">SDKs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest AI innovations</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shree AI. Made with <i class="fas fa-heart"></i> in Kutch, Gujarat.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/blog.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

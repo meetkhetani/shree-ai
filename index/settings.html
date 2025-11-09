@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Configure Shree AI Settings - API Integration">
+    <title>Settings - Shree AI</title>
+    
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .settings-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .settings-card {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            margin-bottom: 2rem;
+        }
+        
+        .settings-card h3 {
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+        
+        .api-key-input {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .api-key-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 2px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        
+        .status-badge.active {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--color-success);
+        }
+        
+        .status-badge.inactive {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--color-error);
+        }
+        
+        .info-box {
+            background: rgba(0, 72, 255, 0.05);
+            border-left: 4px solid var(--color-primary);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 50px;">
+                <span style="background: linear-gradient(135deg, #FFD700, #FFA500); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; font-weight: 700;">BETA</span>
+            </a>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Settings Section -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container settings-container">
+            <h1>⚙️ AI Agent Settings</h1>
+            <p style="margin-bottom: 2rem; color: var(--text-secondary);">Configure your Groq API to enable real AI-powered chat responses</p>
+            
+            <!-- API Configuration -->
+            <div class="settings-card">
+                <h3><i class="fas fa-key"></i> Groq API Configuration</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Get your free Groq API key from <a href="https://console.groq.com/keys" target="_blank" style="color: var(--color-primary);">console.groq.com</a>
+                </p>
+                
+                <div class="api-key-input">
+                    <input type="password" id="apiKeyInput" placeholder="Enter your Groq API key (gsk_...)">
+                    <button class="btn btn-primary" onclick="saveApiKey()">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <button class="btn btn-secondary" onclick="toggleKeyVisibility()">
+                        <i class="fas fa-eye" id="eyeIcon"></i>
+                    </button>
+                    <button class="btn btn-outline" onclick="deleteApiKey()" style="border-color: var(--color-error); color: var(--color-error);">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </div>
+                
+                <div id="apiStatus"></div>
+                
+                <div class="info-box">
+                    <strong><i class="fas fa-info-circle"></i> How it works:</strong>
+                    <ul style="margin: 0.5rem 0 0 1.5rem;">
+                        <li>Your API key is stored locally in your browser (localStorage)</li>
+                        <li>The key is never sent to Shree AI servers</li>
+                        <li>All AI chat requests go directly from your browser to Groq</li>
+                        <li>Free tier: 30 requests/minute, perfect for testing!</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Test Chat -->
+            <div class="settings-card">
+                <h3><i class="fas fa-vial"></i> Test AI Agent</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Try asking: "What products do you offer?" or "Tell me about your team"
+                </p>
+                
+                <div class="chat-container" style="height: 300px;">
+                    <div class="chat-messages" id="testChatMessages" style="height: 240px;">
+                        <div class="chat-message bot-message">
+                            <i class="fas fa-robot"></i>
+                            <div class="message-content">
+                                <p>👋 Configure your API key above, then test me here!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <input type="text" id="testChatInput" placeholder="Test the AI agent..." onkeypress="handleTestChatKeyPress(event)">
+                        <button class="btn btn-primary" onclick="sendTestMessage()">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Instructions -->
+            <div class="settings-card">
+                <h3><i class="fas fa-book"></i> Quick Start Guide</h3>
+                <ol style="line-height: 2; color: var(--text-secondary);">
+                    <li>Sign up for free at <a href="https://console.groq.com" target="_blank" style="color: var(--color-primary);">console.groq.com</a></li>
+                    <li>Create a new API key from the dashboard</li>
+                    <li>Copy your key (starts with "gsk_")</li>
+                    <li>Paste it above and click Save</li>
+                    <li>Visit the <a href="demo.html#chatbot" style="color: var(--color-primary);">Demo page</a> to chat with real AI!</li>
+                </ol>
+                
+                <div class="info-box">
+                    <strong><i class="fas fa-shield-alt"></i> Security Note:</strong>
+                    <p style="margin: 0.5rem 0 0;">For production use, implement server-side API calls to protect your key. This demo uses client-side calls for simplicity.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="demo.html#chatbot" class="btn btn-primary btn-lg">
+                    <i class="fas fa-robot"></i> Try AI Chat Demo
+                </a>
+                <a href="index.html" class="btn btn-outline btn-lg">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+    <script src="js/ai-agent.js"></script>
+    <script>
+        // Check current API key status
+        function checkApiKeyStatus() {
+            const apiKey = localStorage.getItem('groq_api_key');
+            const statusDiv = document.getElementById('apiStatus');
+            const input = document.getElementById('apiKeyInput');
+            
+            if (apiKey) {
+                statusDiv.innerHTML = `
+                    <div class="status-badge active">
+                        <i class="fas fa-check-circle"></i>
+                        API Key Configured
+                    </div>
+                `;
+                // Don't show the actual key, just show masked placeholder
+                input.value = '';
+                input.placeholder = '••••••••••••••••••••••••••• (Key is saved securely)';
+            } else {
+                statusDiv.innerHTML = `
+                    <div class="status-badge inactive">
+                        <i class="fas fa-times-circle"></i>
+                        No API Key Set
+                    </div>
+                `;
+                input.placeholder = 'Enter your Groq API key (gsk_...)';
+            }
+        }
+        
+        function saveApiKey() {
+            const input = document.getElementById('apiKeyInput');
+            const apiKey = input.value.trim();
+            
+            if (!apiKey) {
+                alert('Please enter an API key');
+                return;
+            }
+            
+            if (!apiKey.startsWith('gsk_')) {
+                alert('Invalid Groq API key format. Keys should start with "gsk_"');
+                return;
+            }
+            
+            localStorage.setItem('groq_api_key', apiKey);
+            
+            // Reinitialize AI agent
+            initializeAIAgent(apiKey);
+            
+            alert('✅ API key saved successfully! You can now use the AI chat.');
+            checkApiKeyStatus();
+        }
+        
+        function toggleKeyVisibility() {
+            const input = document.getElementById('apiKeyInput');
+            const icon = document.getElementById('eyeIcon');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+        
+        function deleteApiKey() {
+            if (confirm('Are you sure you want to delete your API key? This will disable AI features.')) {
+                localStorage.removeItem('groq_api_key');
+                document.getElementById('apiKeyInput').value = '';
+                alert('✅ API key deleted successfully!');
+                checkApiKeyStatus();
+                // Reload page to reset AI agent
+                window.location.reload();
+            }
+        }
+        
+        // Test chat functionality
+        async function sendTestMessage() {
+            const input = document.getElementById('testChatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            const chatMessages = document.getElementById('testChatMessages');
+            
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chat-message user-message';
+            userMsg.innerHTML = `<div class="message-content"><p>${message}</p></div>`;
+            chatMessages.appendChild(userMsg);
+            
+            input.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Check if API key exists
+            if (!aiAgent || !localStorage.getItem('groq_api_key')) {
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'chat-message bot-message';
+                errorMsg.innerHTML = `
+                    <i class="fas fa-robot"></i>
+                    <div class="message-content">
+                        <p>⚠️ Please configure your Groq API key above first!</p>
+                    </div>
+                `;
+                chatMessages.appendChild(errorMsg);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                return;
+            }
+            
+            // Show typing
+            const typing = document.createElement('div');
+            typing.className = 'chat-message bot-message';
+            typing.innerHTML = `
+                <i class="fas fa-robot"></i>
+                <div class="message-content">
+                    <div class="typing-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(typing);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            // Get AI response
+            try {
+                const response = await aiAgent.sendMessage(message);
+                typing.remove();
+                
+                const botMsg = document.createElement('div');
+                botMsg.className = 'chat-message bot-message fade-in';
+                botMsg.innerHTML = `
+                    <i class="fas fa-robot"></i>
+                    <div class="message-content">
+                        <p>${response.message}</p>
+                    </div>
+                `;
+                chatMessages.appendChild(botMsg);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            } catch (error) {
+                typing.remove();
+                alert('Error: ' + error.message);
+            }
+        }
+        
+        function handleTestChatKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendTestMessage();
+            }
+        }
+        
+        // Initialize on page load
+        checkApiKeyStatus();
+    </script>
+</body>
+</html>

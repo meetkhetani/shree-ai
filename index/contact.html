@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Shree AI - Get in touch with our team">
+    <title>Contact Us - Shree AI</title>
+    
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 50px;">
+                <span style="background: linear-gradient(135deg, #FFD700, #FFA500); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; font-weight: 700;">BETA</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="developers.html" class="nav-link">Developers</a></li>
+                <li><a href="demo.html" class="nav-link">Demo</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content" data-aos="fade-up">
+                <h1>Get in Touch</h1>
+                <p>We'd love to hear from you. Reach out to us anytime!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container" data-aos="fade-right">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="topic">Topic *</label>
+                            <select id="topic" name="topic" required>
+                                <option value="">Select a topic...</option>
+                                <option value="sales">Sales Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-container" data-aos="fade-left">
+                    <h2>Contact Information</h2>
+                    <p>Prefer to reach out directly? Here are our contact details</p>
+                    
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>hello@shreeai.com</p>
+                                <p>support@shreeai.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>+91 99999 88888</p>
+                                <p>Mon-Fri: 9am - 6pm IST</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Kutch, Gujarat</p>
+                                <p>India</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9am - 6pm</p>
+                                <p>Saturday: 10am - 4pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="contact-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links-large">
+                            <a href="https://github.com/shreeai" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/company/shreeai" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://twitter.com/shreeai" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://youtube.com/@shreeai" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section section-map">
+        <div class="container">
+            <div class="map-container" data-aos="fade-up">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Proudly Based in Kutch, Gujarat</h3>
+                    <p>Building world-class AI solutions from the heart of India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Cards -->
+    <section class="section section-quick-contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Other Ways to Reach Us</h2>
+                <p class="section-description">Choose your preferred communication channel</p>
+            </div>
+            
+            <div class="quick-contact-grid">
+                <div class="quick-contact-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fab fa-discord"></i>
+                    <h3>Discord Community</h3>
+                    <p>Join 5,000+ developers in our active community</p>
+                    <a href="https://discord.gg/shreeai" class="btn btn-primary">
+                        <i class="fab fa-discord"></i> Join Server
+                    </a>
+                </div>
+                
+                <div class="quick-contact-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub Issues</h3>
+                    <p>Report bugs or request features on GitHub</p>
+                    <a href="https://github.com/shreeai/issues" class="btn btn-primary">
+                        <i class="fab fa-github"></i> Open Issue
+                    </a>
+                </div>
+                
+                <div class="quick-contact-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-life-ring"></i>
+                    <h3>Help Center</h3>
+                    <p>Browse FAQs and documentation</p>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-book"></i> Visit Help Center
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Message Sent Successfully!</h2>
+            <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+            <button class="btn btn-primary" onclick="closeSuccessModal()">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/logo.svg" alt="Shree AI Logo" style="height: 40px; margin-bottom: 1rem;">
+                    </div>
+                    <p class="footer-description">
+                        Building intelligent AI solutions that empower everyone. 
+                        Proudly built by young developers from Kutch.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="products.html">AI Chatbot Builder</a></li>
+                        <li><a href="products.html">Content Generator</a></li>
+                        <li><a href="products.html">Workflow Automation</a></li>
+                        <li><a href="demo.html">Demo Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="developers.html">API Documentation</a></li>
+                        <li><a href="developers.html">GitHub</a></li>
+                        <li><a href="developers.html">Discord Community</a></li>
+                        <li><a href="developers.html">SDKs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Stay updated with our latest AI innovations</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shree AI. Made with <i class="fas fa-heart"></i> in Kutch, Gujarat.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
